@@ -7,4 +7,4 @@ def news_index(request):
     context = {
         'news' : news 
     }
-    return render(request, 'news/index.html', context)
+    return render(request, 'index.html', context)
