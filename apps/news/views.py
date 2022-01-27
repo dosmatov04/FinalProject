@@ -8,3 +8,6 @@ def news_index(request):
         'news' : news 
     }
     return render(request, 'index.html', context)
+
+def form(request):
+    return render(request, 'faq.html')
