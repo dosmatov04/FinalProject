@@ -1,7 +1,7 @@
 from django.urls import path 
-from apps.news.views import news_index
+from apps.news.views import form
 
 
 urlpatterns = [
-    path('', news_index, name = 'news_index')
+    path('form/', form, name = 'news_index')
 ]
