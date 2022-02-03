@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from tabnanny import verbose
 from django.db import models
 
@@ -13,6 +14,7 @@ class Setting(models.Model):
     instagram = models.CharField(blank=True,max_length=50)
     twitter = models.CharField(blank=True,max_length=50)
     telegram = models.CharField(blank=True, max_length=50)
+    backround_image = models.ImageField(upload_to = 'backround_image/')
 
     def __str__(self):
         return f"ID: {self.id} ||||| Title: {self.title}"
