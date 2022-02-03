@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
@@ -7,7 +8,6 @@ class Setting(models.Model):
     keywords = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     address = models.CharField(blank=True,max_length=100)
-    phone = models.CharField(blank=True,max_length=15)
     email = models.CharField(blank=True,max_length=50)
     facebook = models.CharField(blank=True,max_length=50)
     instagram = models.CharField(blank=True,max_length=50)
@@ -19,3 +19,14 @@ class Setting(models.Model):
     
     class Meta:
         verbose_name_plural = "Настройки"
+
+class Phone(models.Model):
+    setting = models.ForeignKey(Setting, on_delete=models.CASCADE, related_name='phone_number')
+    phone = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.phone 
+
+    class Meta:
+        verbose_name = "Номер"
+        verbose_name_plural = "Номера"
