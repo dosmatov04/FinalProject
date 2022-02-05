@@ -9,6 +9,7 @@ class Setting(models.Model):
     keywords = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     address = models.CharField(blank=True,max_length=100)
+    working_hours = models.CharField(max_length=250)
     email = models.CharField(blank=True,max_length=50)
     facebook = models.CharField(blank=True,max_length=50)
     instagram = models.CharField(blank=True,max_length=50)
