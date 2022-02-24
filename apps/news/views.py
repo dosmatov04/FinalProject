@@ -3,6 +3,6 @@ from apps.news.models import News
 
 # Create your views here.
 
-
-def form(request):
-    return render(request, 'faq.html')
+def News(request):
+    news=News.objects.all()
+    return render(request,"index.html",{'news':news})
